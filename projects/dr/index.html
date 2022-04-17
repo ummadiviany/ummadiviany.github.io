@@ -249,10 +249,204 @@
 
         <h5 class="category"> Method 1 : Deep Feature Extraction + External Classification </h5>
         <p class="card-text">
-            The first method was to extract features from the images using pretrained model Inception V3. Inception V3 is trained on the ImageNet dataset and can be used as a feature extractor.
+            The first method was to extract features from the images using pretrained model Inception V3. 
+            Inception V3 is trained on the ImageNet dataset and can be used as a feature extractor.The extracted features are used as inputs to difeerent ML classifiers. 
+            The statistical results are tabulated for each classifier with and without data augumentation.
+        </p>
+
+        <table style="width:70%" align="center">
+            <caption style="text-align:center">Evalution metrics for DR binary classification - <b>without data augumentation</b></caption>
+            <tr>
+                <th>Classifier</th>
+                <th>Accuracy</th>
+                <th>Precision</th>
+                <th>Recall</th>
+                <th>F1 Score</th>
+            </tr>
+
+            <tr>
+                <td>KNN</td>
+                <td>0.7848</td>
+                <td>0.79</td>
+                <td>0.78</td>
+                <td>0.78</td>
+            </tr>
+
+            <tr>
+                <td>SVM</td>
+                <td>0.7818</td>
+                <td>0.78</td>
+                <td>0.78</td>
+                <td>0.78</td>
+            </tr>
+
+
+            <tr>
+                <td>Random Forest</td>
+                <td>0.8091</td>
+                <td><b>0.81</b></td>
+                <td><b>0.81</b></td>
+                <td><b>0.81</b></td>
+            </tr>
+
+            <tr>
+                <td>XGBoost</td>
+                <td><b>0.8121</b></td>
+                <td><b>0.81</b></td>
+                <td><b>0.81</b></td>
+                <td><b>0.81</b></td>
+            </tr>
+
+            <tr>
+                <td>DNN</td>
+                <td>0.7787</td>
+                <td>0.77</td>
+                <td>0.77</td>
+                <td>0.77</td>
+            </tr>
+
+        </table>
+
+        <p class="card-text">
+            From the results above that it is clear that Random Forest and XGBoost are performing well but XGBoost is outperforming by a slight marging. 
+            As we all know we can let the model learn image invariances and which can be lead to an improved performance.
+            The following data augumentation are performed to increase the performance of the model.
+            <ul>
+                <li>
+                    Rotation
+                </li>
+
+                <li>
+                    Resizing    
+                </li>
+
+                <li>
+                    Gaussian Noise
+                </li>
+
+                <li>
+                    Histogram Equalization
+                </li>
+            </ul>
+        </p>
+
+        <p class="card-text">
+            The results of the model with data augumentation are as follows.
+            <table style="width:70%" align="center">
+                <caption style="text-align:center">Evalution metrics for DR binary classification - <b>with data augumentation</b></caption>
+                <tr>
+                    <th>Classifier</th>
+                    <th>Accuracy</th>
+                    <th>Precision</th>
+                    <th>Recall</th>
+                    <th>F1 Score</th>
+                </tr>
+    
+                <tr>
+                    <td>KNN</td>
+                    <td>0.9064</td>
+                    <td>0.90</td>
+                    <td>0.90</td>
+                    <td>0.90</td>
+                </tr>
+    
+                <tr>
+                    <td>SVM</td>
+                    <td>0.9102</td>
+                    <td>0.91</td>
+                    <td>0.91</td>
+                    <td>0.91</td>
+                </tr>
+    
+    
+                <tr>
+                    <td>Random Forest</td>
+                    <td>0.9707</td>
+                    <td>0.97</td>
+                    <td>0.97</td>
+                    <td>0.97</td>
+                </tr>
+    
+                <tr>
+                    <td>XGBoost</td>
+                    <td>0.9707</td>
+                    <td>0.97</td>
+                    <td>0.97</td>
+                    <td>0.97</td>
+                </tr>
+    
+                <tr>
+                    <td>DNN</td>
+                    <td><b>0.9757</b></td>
+                    <td>0.97</td>
+                    <td>0.97</td>
+                    <td>0.97</td>
+                </tr>
+    
+            </table>
+        
+        Our data augumentaions worked well and significantly impoved the performance of the models. 
+        It is obivoius from the results that the DNN is the best performing classifier with <b>97.57%</b> accuracy. 
+        Now we will look into different deep neural networks for end-to-end classification. 
+        Remember that we have not yet done the our main problem multi class classification.
         </p>
 
         <h5 class="category"> Method 2 : End-to-End Deep Neural Net based Classification</h5>
+        <p class="card-text">
+            Now our approach is to use the state of the art deep neural networks for end-to-end classification. 
+            For this task we can go with either fine-tuning or traning from scratch.
+            <ul>
+            
+                <li>
+                    <b>Training from scratch</b> : This method work well only if we had a large set of images (but we have only 2667 for training for binary classification and 2963 for multi class classification)
+                </li>
+
+                <li>
+                    <b>Fine-tuning</b> : This methods works well even if we have a small set of images(2667 and 2963 are good enough to produce reasonable results). 
+                    All fine tuning models are trained on ImageNet dataset which is a large dataset with over 1 million images and 1000 categories.
+                </li>
+            </ul>
+
+            The following architectures are used with mentioned hyperparamenters and training reciepe.
+            <ol>
+                <li>
+                    <b>VGG</b> - VGG19 is a standard 19 layer convnet with that achieved SOTA results on ImageNet in 2013. 
+                    Commonly used as a feature extractor for downstream tasks such as image classification, detection, segmentation etc.
+                </li>
+
+                <li>
+                    <b>ResNet</b> - ResNet is a builds upon VGG network. 
+                    It utilizes skip connections to jump over layer that help in gradient propagation, local - global feature interactions. 
+                    We will be using ResNet18 with 18 convolutional layers.
+                </li>
+                <li>
+                    <b>EfficinetNet</b> : EfficientNet builds upon basis that appropriate depth, width and resolution of the networks are essential for best performance. 
+                    It uses a depth, width, resolution scaling factor to develop a network that is efficient for a given task. 
+                    We will be using EfficientNetB0 which is a base network.        
+                </li>
+
+                <li>
+                    <b>ConvNext</b> : After Visual Transformers, convnext uses the best practices from both natural language and vision to create a set of convnext variants. 
+                    ConvNext are current state of the art convolutional neural networks for image classification on benchmark dataset ImageNet. 
+                    We will be using ConvNext-Tiny variant for this task.
+                </li>
+            </ol>
+
+            The models are trained on a <b>Tesla T4 GPU (16GB memory)</b> on AWS Sagemaker Studio Lab. 
+            <b>Binary/Categorical Cross Entropy</b> loss is used as cost function to penalize the false classifications. 
+            <b>Adaptive momentum (Adam)</b> optimizer with <b>learning rate = 3e-4</b> and <b>momentum = 0.9</b> is used to optimize the error. 
+            Batch size is chosen appropriately so that capacity of the GPU is not exceeded. Used batch sizes are <b>32</b>, <b>64</b> and <b>128</b>.
+
+
+        </p>
+
+        <p class="card-text">
+            
+            We have tried with training from scratch but that doesn't gone well. If had time I'll try post those results as well(I have re-run the experiments to get the results). 
+            The maximum accuracy achieved with the training from scratch is <b>~90%</b> .
+
+            Now we will try to fine-tune the models.
+        </p>
 
 
     </div>
@@ -264,6 +458,36 @@
 
     <div class="container">
         <h4 class="category"> Conclusion </h4>
+        <p class="card-text">
+            The obtained results indicate that modern deep networks outperform traditional methods by significant margins (without data augmentation).              
+                
+            The are train and test set are obtained from the <a class="authorlink" target="_blank" href="https://www.kaggle.com/c/aptos2019-blindness-detection/data">APTOS 2019 Blindness Detection</a> dataset.
+                    
+            The shown results are not representative of the real world. The results are obtained on a small dataset.
+
+            Given that 99.8% accuracy doesn't mean that DR recognition problem is solved. The accuracy is only very small set of images that are not representative of the real world scenarios.
+            
+            There are still gaps exists in taking these models to the real world. Following are the list of few(out of many) problems.
+        
+            <h5 class="category"> Probelms </h5>
+            <ol>
+                <li>
+                    Expert labes are very costly. Hoping to create a large dataset(Millions of images) with expert labels is unfeasible task.
+                </li>
+                <li>
+                    Noisy labels create a mess for the models. The quality of the model is of prime importance. 
+                </li>
+            </ol>    
+            <!-- The shown methods worked on significantly on a both binary DR as well as multi class DR classification
+tasks. Since the test is a potion of main data set, in which features and images are similar, the models
+will do well. If the same model used to test on a different it, performance drops heavily. So now the
+current days task to train more robust algorithms that will withstand the invariances in size, modalities,
+dataset population, etc. If we want to see the computer algorithms running real-time in hospitals the
+dataset invariance should be learnt robustly. A more recent approach called federated learning is being
+under active research, in which model is training is distributed in a centralized process, and trained
+on multiple datasets that are stored securely at different hospitals. -->
+
+        </p>
     </div>
   
   <!-- Display categorized projects -->
