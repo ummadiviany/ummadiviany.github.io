@@ -207,7 +207,9 @@
 
                     </p>
 
-                    <table style="width:90%" align="center">
+                    <table style="width:100%" align="center">
+                        <caption style="text-align:center">Model interpretation for each class using <b>Integrated Gradients</b> and <b>DeepLIFT</b><caption>
+                    
                         <tr>
                             <th>Class and Label</td>
                             <td><b>No DR - 0</b></td>
@@ -494,11 +496,12 @@
                     <td>0.98</td>
                     <td>0.98</td>
                     <td>0.98</td>
-                    <td>13</td>
+                    <td><b>13</b></td>
                 </tr>
     
             </table>
 
+            From the above results we can see that <b>ConvNext-Tiny</b> is the best performing model for binary classification with an accuracy of <b>0.981</b> and only <b>13</b> false classifications out of 800..
 
             <table style="width:70%" align="center">
                 <caption style="text-align:center">Evalution metrics for <b>Multi class DR classification - using fine-tuning</b></caption>
@@ -550,13 +553,71 @@
     
             </table>
 
-            
+            From the above results we can see that <b>EfficientNet-B0/b> is the best performing model for multi class classification with an accuracy of <b>0.997</b> and only <b>2</b> false classifications out of 704.
         </p>
 
 
     </div>
 
     <h5 class="category">Model Understanding</h5>
+
+    <p>
+        We just not only want a model that can classify DR but give reasonings for the classifications. 
+        There are quite a few popular methods that can be used to understand the model. 
+        We will be using <b>Visual Explanations</b> to understand the model. 
+        We'll see Saliency Maps, Gradient based Attributions, DeepLIFT, Guided Backpropagation.
+
+        The following table shows the outputs of visual explanations from the model.
+
+        <table style="width:100%" align="center">
+            <caption style="text-align:center">Model interpretation for each class using <b>Integrated Gradients </b> and <b>DeepLIFT</b></caption>
+        
+            <tr>
+                <th><b>Class</b> </td>
+                <th><b>Input Image</b></th>
+                <th><b>Overlayed Gradient Magnitudes</b></th>
+                <th><b>Overlayed Integrated Gradients</b></th>
+                <th><b>DeepLIFT</b></th>
+            </tr>
+
+            <tr>
+                <th>Mild DR</th>
+                <td><img class="p-1" src="interpret/1_Mild_org.png" alt="No DR" width="250" height="250"></td>
+                <td><img class="p-1" src="interpret/1_Mild_grads.png" alt="No DR" width="250" height="250"></td>
+                <td><img class="p-1" src="interpret/1_Mild_attr_ig.png" alt="No DR" width="250" height="250"></td>
+                <td><img class="p-1" src="interpret/1_Mild_attr_dl.png" alt="No DR" width="250" height="250"></td>
+            </tr>
+
+            <tr>
+                <th>Moderate DR</th>
+                <td><img class="p-1" src="interpret/2_Moderate_org.png" alt="No DR" width="250" height="250"></td>
+                <td><img class="p-1" src="interpret/2_Moderate_grads.png" alt="No DR" width="250" height="250"></td>
+                <td><img class="p-1" src="interpret/2_Moderate_attr_ig.png" alt="No DR" width="250" height="250"></td>
+                <td><img class="p-1" src="interpret/2_Moderate_attr_dl.png" alt="No DR" width="250" height="250"></td>
+            </tr>
+
+            <tr>
+                <th>Severe DR</th>
+                <td><img class="p-1" src="interpret/3_Severe_org.png" alt="No DR" width="250" height="250"></td>
+                <td><img class="p-1" src="interpret/3_Severe_grads.png" alt="No DR" width="250" height="250"></td>
+                <td><img class="p-1" src="interpret/3_Severe_attr_ig.png" alt="No DR" width="250" height="250"></td>
+                <td><img class="p-1" src="interpret/3_Severe_attr_dl.png" alt="No DR" width="250" height="250"></td>
+            </tr>
+
+            <tr>
+                <th>Proliferate DR</th>
+                <td><img class="p-1" src="interpret/4_Proliferate_DR_org.png" alt="No DR" width="250" height="250"></td>
+                <td><img class="p-1" src="interpret/4_Proliferate_DR_grads.png" alt="No DR" width="250" height="250"></td>
+                <td><img class="p-1" src="interpret/4_Proliferate_DR_attr_ig.png" alt="No DR" width="250" height="250"></td>
+                <td><img class="p-1" src="interpret/4_Proliferate_DR_attr_dl.png" alt="No DR" width="250" height="250"></td>
+            </tr>
+
+            
+        </table>
+
+        From the above attributions we can understand where the model is looking to produce a classification result.
+        
+    </p>
     
     
 
