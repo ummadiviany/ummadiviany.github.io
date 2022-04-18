@@ -445,16 +445,120 @@
             We have tried with training from scratch but that doesn't gone well. If had time I'll try post those results as well(I have re-run the experiments to get the results). 
             The maximum accuracy achieved with the training from scratch is <b>~90%</b> .
 
-            Now we will try to fine-tune the models.
+            Now we will fine-tune pretrained layers to match the number of classes. 
+            Following are the results for binary classification ({<b>No DR</b>, <b>DR</b>}) and multi class classification ({<b>No DR</b>, <b>Mild DR</b>, <b> Moderate DR</b>, <b>Severe DR</b>, <b>Proliferate DR</b>}) using fine-tuning .
+
+
+            <table style="width:70%" align="center">
+                <caption style="text-align:center">Evalution metrics for <b>binary DR classification - using fine-tuning</b></caption>
+                <tr>
+                    <th>Model</th>
+                    <th>Accuracy</th>
+                    <th>Precision</th>
+                    <th>Recall</th>
+                    <th>F1 Score</th>
+                    <th>False classifications(out of 800)</th>
+                </tr>
+    
+                <tr>
+                    <td>VGG19</td>
+                    <td>0.977</td>
+                    <td>0.98</td>
+                    <td>0.98</td>
+                    <td>0.98</td>
+                    <td>18</td>
+                </tr>
+
+                <tr>
+                    <td>ResNet18</td>
+                    <td>0.974</td>
+                    <td>0.97</td>
+                    <td>0.97</td>
+                    <td>0.97</td>
+                    <td>21</td>
+                </tr>
+
+                <tr>
+                    <td>EfficientNet-B0</td>
+                    <td>0.974</td>
+                    <td>0.97</td>
+                    <td>0.97</td>
+                    <td>0.97</td>
+                    <td>21</td>
+                </tr>
+    
+    
+                <tr>
+                    <td>ConvNext-Tiny</td>
+                    <td><b>0.981</b></td>
+                    <td>0.98</td>
+                    <td>0.98</td>
+                    <td>0.98</td>
+                    <td>13</td>
+                </tr>
+    
+            </table>
+
+
+            <table style="width:70%" align="center">
+                <caption style="text-align:center">Evalution metrics for <b>Multi class DR classification - using fine-tuning</b></caption>
+                <tr>
+                    <th>Model</th>
+                    <th>Accuracy</th>
+                    <th>Precision</th>
+                    <th>Recall</th>
+                    <th>F1 Score</th>
+                    <th>False classifications(out of 704)</th>
+                </tr>
+    
+                <tr>
+                    <td>VGG19</td>
+                    <td>0.9644</td>
+                    <td>0.96</td>
+                    <td>0.92</td>
+                    <td>0.94</td>
+                    <td>25</td>
+                </tr>
+
+                <tr>
+                    <td>ResNet18</td>
+                    <td>0.99</td>
+                    <td>0.98</td>
+                    <td>0.98</td>
+                    <td>0.98</td>
+                    <td>7</td>
+                </tr>
+
+                <tr>
+                    <td>EfficientNet-B0</td>
+                    <td><b>0.997</b></td>
+                    <td>0.99</td>
+                    <td>0.99</td>
+                    <td>0.99</td>
+                    <td><b>2</b></td>
+                </tr>
+    
+    
+                <tr>
+                    <td>ConvNext-Tiny</td>
+                    <td>0.995</td>
+                    <td>0.99</td>
+                    <td>0.99</td>
+                    <td>0.99</td>
+                    <td>3</td>
+                </tr>
+    
+            </table>
+
+            
         </p>
 
 
     </div>
 
-    <div class="container">
-        <h4 class="category"> Results </h4>
-
-    </div>
+    <h5 class="category">Model Understanding</h5>
+    
+    
 
     <div class="container">
         <h4 class="category"> Conclusion </h4>
@@ -477,16 +581,24 @@
                 <li>
                     Noisy labels create a mess for the models. The quality of the model is of prime importance. 
                 </li>
-            </ol>    
-            <!-- The shown methods worked on significantly on a both binary DR as well as multi class DR classification
-tasks. Since the test is a potion of main data set, in which features and images are similar, the models
-will do well. If the same model used to test on a different it, performance drops heavily. So now the
-current days task to train more robust algorithms that will withstand the invariances in size, modalities,
-dataset population, etc. If we want to see the computer algorithms running real-time in hospitals the
-dataset invariance should be learnt robustly. A more recent approach called federated learning is being
-under active research, in which model is training is distributed in a centralized process, and trained
-on multiple datasets that are stored securely at different hospitals. -->
 
+                <li>
+                    Data bias is a huge probelm in medical domain. Models are being trained on single dataset which is collected from one source / hospital / region. 
+                    This induces the local bias in the model. The model performance then never matters if it can work well on differnent dataset.
+                </li>
+            </ol>    
+
+            <h5 class="category"> Forward directions </h5>
+            Currently the researchers are working towards the following solutions.
+            <ol>
+                <li>
+                    Since expert labels costly. Developing robust and high performance Unsupervised / Semisupervised alogrithms can be a game changer.
+                </li>
+                <li>
+                    Training the models on multiple dataset can make model more robust. Federated Learning can be used to train the models on multiple datasets. 
+                    In federated learning, the model is trained using distributed and centralized process where data is securely stored at its origin. 
+                </li>
+            
         </p>
     </div>
   
@@ -511,7 +623,7 @@ on multiple datasets that are stored securely at different hospitals. -->
     
 <footer class="sticky-bottom mt-5">
   <div class="container justify-content-center">
-    &copy; Inspired by UD webpage, Copyright 2021 Utkarsh  Dwivedi.
+    &copy; Inspired by UD webpage, Copyright 2022 @ <b>Vinay</b> Ummadi.
     
     
   </div>
