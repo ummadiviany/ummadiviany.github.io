@@ -52,6 +52,10 @@
       width: 90%;
       border-collapse: collapse;
     }
+
+    ul {
+  list-style-type: none;
+    }
 </style>
     
 <!-- MathJax -->
@@ -158,7 +162,8 @@
       <div class="post">
 
   <header class="post-header">
-    <h3 class="post-title" align="center">AI based TelePathology </h3>
+    
+    <a class="authorlink" target="_blank" href="https://telepathology-ui.herokuapp.com/"><h3 class="post-title" align="center">AI based TelePathology </h3></a>
     <!-- <p class="card-text">Current and past projects that I have been a part. Click on each project to know more</p> -->
   </header>
 
@@ -173,6 +178,7 @@
         <p class="card-text">
             This is a term project for TeleMedicine Laboratory course in Spring 2022  led by Prof Manjunatha Mahadevappa at IIT Kharagpur. 
             Chawan Dinesh, Sai Pavan and myself formed as group to develop an web application for Tele-Pathology.
+            Click on this link <a class="authorlink" target="_blank" href="https://telepathology-ui.herokuapp.com/">AI based TelePathology</a> to see the live application deployed in herokuapp.
         </p>
 
         <p class="card-text">
@@ -201,7 +207,176 @@
     </div>
     
 
-    <!-- defining the problem -->
+    <!-- Features available in AI-based TelePathology -->
+
+    <div class="container">
+        <h4 class="category"> Features</h4>
+        
+
+            <ul>
+                <li>
+                    
+                        <h5 class="category">Available Features:</h5>
+                    
+                        <ul>
+                            <!-- <li>
+                                <b>Landing Page :</b> In landing page the users will get to know the benfits of the application and how to use it. 
+                            </li> -->
+
+                            <li>
+                                <b>Patient and Pathologist Sign Up : </b> The users can sign up as a patient or pathologist. 
+                                In Sign-up page, the user will be asked to choose to be a patient or pathologist. Following the choice, the user will be asked to fill in the specified field. 
+                                Emergency contact details are compulsory for the patient.
+                                Board certificate is compulsory for the pathologist. 
+                                Once completed, the user will be redirected to the sign-in page.
+                            </li>
+
+                            <li>
+                                <b>Patient and Pathologist Sign In : </b> As the user is already registered, the user can sign in.
+                                The user will asked to sign-in as either patient or pathologist.  
+                                The user will be asked to enter the email and password.
+                                The user will be notified if the email or password is incorrect. 
+                                The user will be redirected to the home page if the email and password is correct.
+                            </li>
+
+                            <p></p>
+                            <h6 class="category">Features for Patients:</h6>
+                            <ul>
+                                <li>
+                                    <b>Dashboard</b> : The dashboard will show the details of the patient, his appointments and pathologist.
+                                </li>
+
+                                <li>
+                                    <b>Appointment Booking</b> : The patient can book an appointment with a pathologist.
+                                    Patient will choose a pathologist and enters the appointment date and time and with short description of the problem.
+                                </li>
+
+                                <li>
+                                    <b>Pathology Samples</b> : If patient has access to his pathology samples then he can upload the samples. 
+                                    The pathology samples can be uploaded by either patient or pathologist.
+                                </li>
+
+                                <li>
+                                    <b>Diagnostic Comments</b> : The diagnostic comments sent by pathologist will be shown in this page. 
+                                    These comments are unique to the pathology sample.
+                                </li>
+                            </ul>
+
+                            <h6 class="category">Features for Pathologists:</h6>
+                            <ul>
+                                <li>
+                                    <b>Dashboard</b> : The dashboard will show the details of the pathologist, his appointments and patients. 
+                                    It also shows the number of appointments that are pending and completed. 
+                                    In addition, the dashboard will show the number of patients that are waiting for the pathologist. 
+                                    Also shows the statistics of Men Vs Women, Completed Vs Pending etc.
+                                </li>
+
+                                <li>
+                                    <b>Diagnostic Comments</b> : The pathologist will send his feedback on patient samples after detailed analysis.
+                                </li>
+
+                                <li>
+                                    <b>Approve/Reject Appointment Requests</b> : The pathologist can approve or reject the appointment requests.
+                                </li>
+
+                                <li>
+                                    <b></b>
+                                </li>
+                            </ul>
+        
+                        </ul>
+                    
+                </li>
+
+                <li>
+                    
+                    <b>
+                        <h5 class="category">Upcoming Features:</h5>
+                    </b>
+
+                        <ul>
+                            <li>
+                                <b>Landing Page</b> 
+                            </li>
+
+                            <li>
+                                <b>Landing Page</b> 
+                            </li>
+                        </ul>
+                    
+                </li>
+            </ul>
+    </div>
+
+    <!-- Tech stack for the project -->
+
+    <div class="container">
+        <h4 class="category">Built Using</h4>
+        <p class="card-text">
+            The application is developed using the following technologies:
+        </p>
+        <ul>
+            <li>
+                <b>
+                    Python
+                </b>
+                <p class="card-text">
+                    Python is a general-purpose, high-level programming language. It is used to develop web applications, desktop applications, and scientific computing.
+                </p>
+            </li>
+            <li>
+                <b>
+                    Flask
+                </b>
+                <p class="card-text">
+                    Flask is a micro-framework for Python. It is designed to make it easy to create web applications.
+                </p>
+            </li>
+            <li>
+                <b>
+                    PostgreSQL
+                </b>
+                <p class="card-text">
+                    PostgreSQL is a powerful, open source object-relational database system. It is used to store and retrieve data.
+                </p>
+            </li>
+            <li>
+                <b>
+                    Heroku
+                </b>
+                <p class="card-text">
+                    Heroku is a cloud platform that allows you to deploy and manage your web applications.
+                </p>
+            </li>
+            <li>
+                <b>
+                    AWS
+                </b>
+                <p class="card-text">
+                    AWS is a cloud computing platform that provides services for developers, IT professionals, and enterprises.
+                </p>
+            </li>
+            <li>
+                <b>
+                    Docker
+                </b>
+                <p class="card-text">
+                    Docker is a software platform for developers and sysadmins to build, ship, and run software.
+                </p>
+            </li>
+            <li>
+                <b>
+                    Google Cloud Platform
+                </b>
+                <p class="card-text">
+                    Google Cloud Platform is a set of cloud computing services that enable developers to build, deploy, and manage cloud applications.
+                </p>
+            </li>
+            <li>
+                <b>
+                    Google Cloud Vision API
+                </b>
+    </div>
     
 
     <!-- Implemented Methods -->
@@ -212,7 +387,7 @@
 
     
   
-  <!-- Display categorized projects -->
+ 
     
       
       
