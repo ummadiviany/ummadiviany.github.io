@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<title>Vinay Ummadi | Diabetic Retinopathy Recognition</title>
+<meta name="description" content="">
+
+<!-- Open Graph -->
+
+
+<!-- Bootstrap & MDB -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha512-MoRNloxbStBcD8z3M/2BmnT+rg4IsMxPkXaGh2zD6LGNNFE80W3onsAhRcMAMrSoyWL9xD7Ert0men7vR8LUZg==" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" integrity="sha512-RO38pBRxYH3SoOprtPTD86JFOclM51/XTIdEPh5j8sj4tp8jmQIx26twG52UaLi//hQldfrh7e51WzP9wuP32Q==" crossorigin="anonymous" />
+
+<!-- Fonts & Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"  integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
+
+<!-- Code Syntax Highlighting -->
+<link rel="stylesheet" href="https://gitcdn.link/repo/jwarby/jekyll-pygments-themes/master/github.css" />
+
+<!-- Styles -->
+<link rel="shortcut icon" href="../../assets/img/favicon.png">
+<link rel="stylesheet" href="../../assets/css/main.css">
+
+<link rel="canonical" href="projects">
+
+<!-- Theming-->
+
+<style>
+    table, td, th {
+      border: 1px solid;
+    }
+    td,th {
+      text-align: center;
+    }
+
+    th{
+        font-weight: bold;
+        font-size: 1.2em;
+    }
+    
+    td {
+        font-size: 12px;
+    }
+    table {
+      width: 90%;
+      border-collapse: collapse;
+    }
+
+    ul {
+  list-style-type: none;
+    }
+</style>
+    
+<!-- MathJax -->
+<script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-mml-chtml.js"></script>
+<script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+
+  </head>
+
+  <body class="fixed-top-nav sticky-bottom-footer">
+
+    <!-- Header -->
+
+    <header>
+
+    <!-- Nav Bar -->
+    <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top">
+    <div class="container">
+      
+      <a class="navbar-brand title font-weight-lighter" href="../">
+       <span class="font-weight-bold">Vinay</span>   Ummadi
+      </a>
+      
+      <!-- Navbar Toogle -->
+      <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar top-bar"></span>
+        <span class="icon-bar middle-bar"></span>
+        <span class="icon-bar bottom-bar"></span>
+      </button>
+      <div class="collapse navbar-collapse text-right" id="navbarNav">
+        <ul class="navbar-nav ml-auto flex-nowrap">
+          <!-- About -->
+          <!-- <li class="nav-item ">
+            <a class="nav-link" href="/">
+              About
+              
+            </a>
+          </li> -->
+          <li class="nav-item ">
+            <a class="nav-link" href="../../">Home</a>
+          </li>
+          
+          <!-- Other pages -->
+          
+          <li class="nav-item active">
+              <a class="nav-link" href="../">
+                Projects
+                
+                <span class="sr-only">(current)</span>
+                
+              </a>
+          </li>
+          
+          
+          <!--
+          
+          
+          <li class="nav-item ">
+              <a class="nav-link" href="/publications">
+                Publications
+                
+              </a>
+          </li>
+          
+          
+          
+          <li class="nav-item ">
+              <a class="nav-link" href="/patents">
+                Patents
+                
+              </a>
+          </li>
+          
+          
+          -->
+          
+          
+          <li class="nav-item ">
+              <a class="nav-link" href="../../bio">
+                Bio/CV
+                
+              </a>
+          </li>
+          
+          
+          <!-- <li class="nav-item ">
+            <a class="nav-link" href="/pdfs/Utkarsh_CV.pdf" download>
+              Download CV
+              
+            </a>
+        </li> -->
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+</header>
+
+    <!-- Content -->
+
+    <div class="container mt-5">
+      <div class="post">
+
+  <header class="post-header">
+    
+    <a class="authorlink" target="_blank" href="https://telepathology-ui.herokuapp.com/"><h3 class="post-title" align="center">AI based TelePathology </h3></a>
+    <!-- <p class="card-text">Current and past projects that I have been a part. Click on each project to know more</p> -->
+  </header>
+
+  <article>
+    <div class="projects mt-4">
+    <!-- The project text starts from here -->
+    
+    
+    <!-- Brief introduction to the problem -->
+    <div class="container">
+        <h4 class="category"> Brief Description</h4>
+        <p class="card-text">
+            This is a term project for TeleMedicine Laboratory course in Spring 2022  led by Prof Manjunatha Mahadevappa at IIT Kharagpur. 
+            Chawan Dinesh, Sai Pavan and myself formed as group to develop an web application for Tele-Pathology.
+            Click on this link <a class="authorlink" target="_blank" href="https://telepathology-ui.herokuapp.com/">AI based TelePathology</a> to see the live application deployed in herokuapp.
+        </p>
+
+        <p class="card-text">
+            <b>
+                Aim of the project:
+            </b>
+            The aim of the project is to develop an application that can be used by patients and pathologists for tele-pathology services.
+        </p>
+
+        <p class="card-text">
+            A video demonstration of the project is available on the <a href="https://www.youtube.com/watch?v=qSdGfdmDHe8">YouTube</a>. Watch the video to know more about the project.
+
+        </p>
+
+        <p align="center">
+            <iframe width="800" height="450" align="center"
+            src="https://www.youtube.com/embed/qSdGfdmDHe8?autoplay=1&mute=0">
+            </iframe> 
+        </p>
+
+
+        <p class="card-text">
+            <!-- Just create some space before the new section -->
+        </p>
+
+    </div>
+    
+
+    <!-- Features available in AI-based TelePathology -->
+
+    <div class="container">
+        <h4 class="category"> Features</h4>
+        
+
+            <ul>
+                <li>
+                    
+                        <h5 class="category">Available Features:</h5>
+                    
+                        <ul>
+                            <!-- <li>
+                                <b>Landing Page :</b> In landing page the users will get to know the benfits of the application and how to use it. 
+                            </li> -->
+
+                            <li>
+                                <b>Patient and Pathologist Sign Up : </b> The users can sign up as a patient or pathologist. 
+                                In Sign-up page, the user will be asked to choose to be a patient or pathologist. Following the choice, the user will be asked to fill in the specified field. 
+                                Emergency contact details are compulsory for the patient.
+                                Board certificate is compulsory for the pathologist. 
+                                Once completed, the user will be redirected to the sign-in page.
+                            </li>
+
+                            <li>
+                                <b>Patient and Pathologist Sign In : </b> As the user is already registered, the user can sign in.
+                                The user will asked to sign-in as either patient or pathologist.  
+                                The user will be asked to enter the email and password.
+                                The user will be notified if the email or password is incorrect. 
+                                The user will be redirected to the home page if the email and password is correct.
+                            </li>
+
+                            <p></p>
+                            <h6 class="category">Features for Patients:</h6>
+                            <ul>
+                                <li>
+                                    <b>Dashboard</b> : The dashboard will show the details of the patient, his appointments and pathologist.
+                                </li>
+
+                                <li>
+                                    <b>Appointment Booking</b> : The patient can book an appointment with a pathologist.
+                                    Patient will choose a pathologist and enters the appointment date and time and with short description of the problem.
+                                </li>
+
+                                <li>
+                                    <b>Pathology Samples</b> : If patient has access to his pathology samples then he can upload the samples. 
+                                    The pathology samples can be uploaded by either patient or pathologist.
+                                </li>
+
+                                <li>
+                                    <b>Diagnostic Comments</b> : The diagnostic comments sent by pathologist will be shown in this page. 
+                                    These comments are unique to the pathology sample.
+                                </li>
+                            </ul>
+
+                            <h6 class="category">Features for Pathologists:</h6>
+                            <ul>
+                                <li>
+                                    <b>Dashboard</b> : The dashboard will show the details of the pathologist, his appointments and patients. 
+                                    It also shows the number of appointments that are pending and completed. 
+                                    In addition, the dashboard will show the number of patients that are waiting for the pathologist. 
+                                    Also shows the statistics of Men Vs Women, Completed Vs Pending etc.
+                                </li>
+
+                                <li>
+                                    <b>Diagnostic Comments</b> : The pathologist will send his feedback on patient samples after detailed analysis.
+                                </li>
+
+                                <li>
+                                    <b>Approve/Reject Appointment Requests</b> : The pathologist can approve or reject the appointment requests.
+                                </li>
+
+                                <li>
+                                    <b>Histological Tissue Segmentation</b> : The pathologist can segment the tissue and perfrom detailed analysis. 
+                                    This would help in easier interpretation of the pathology sample. 
+                                    This is a pretrained HistoSegNet and is deployed on HerokuApp.
+                                    This feature is not available for the patient.
+                                </li>
+
+                                <li>
+                                    <b>Breast Caner Classification</b> : The pathologist can classify the breast cancer samples at first glance. 
+                                    Later the pathologist can perform detailed analysis and send the results to the patient.
+                                </li>
+                            </ul>
+        
+                        </ul>
+                    
+                </li>
+
+                <li>
+                    
+                    <b>
+                        <h5 class="category">Upcoming Features:</h5>
+                    </b>
+
+                        <ul>
+                            <li>
+                                <b>Automatic Reports</b> : As of now the pathologist can only prepares the reports manually and sends them. 
+                                The report can be made automatically by querying the details from pathologist and can send in a click.  
+                            </li>
+
+                            <li>
+                                <b>Forgot Password</b> : The user can reset the password by entering the email address. 
+                                A verification email will be sent to the email address to reset the password.
+                            </li>
+                        </ul>
+                    
+                </li>
+            </ul>
+    </div>
+
+    <!-- Tech stack for the project -->
+
+    <div class="container">
+        <h4 class="category">Built Using</h4>
+        <p class="card-text">
+            The application is developed using the following technologies:
+        </p>
+        <ul>
+            <li>
+                <b>ReactJS</b> : The frontend is developed using ReactJS.
+            </li>
+
+            <li>
+                <b>NodeJS</b> : The backend is developed using NodeJS.
+            </li>
+            
+            <li>
+                <b>ExpressJS</b> : The backend is developed using ExpressJS.
+            </li>
+            
+            <li>
+                <b>MongoDB</b> : The database is developed using MongoDB.
+            </li>
+            
+            <li>
+                <b>Heroku</b> : The application is deployed on Heroku. The AI models are also deployed on Heroku.
+            </li>
+
+            <li>
+                <b>Python</b> : The deep learning models are kept in production using Python. 
+            </li>
+
+            <li>
+                <b>Flask</b> : Flask has been extensively used for web serving the AI models.
+            </li>
+        </ul>
+    </div>
+    
+
+    <!-- Implemented Methods -->
+
+    
+    
+    
+
+    
+  
+ 
+    
+      
+      
+    
+
+  
+
+</div>
+
+  </article>
+
+</div>
+
+    </div>
+
+    <!-- Footer -->
+
+    
+<footer class="sticky-bottom mt-5">
+  <div class="container justify-content-center">
+    &copy; Inspired by UD webpage, Copyright 2022 @ <b>Vinay</b> Ummadi.
+    
+    
+  </div>
+</footer>
+
+
+
+  </body>
+
+  <!-- jQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
+  <!-- Bootsrap & MDB scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.4/umd/popper.min.js" integrity="sha512-eUQ9hGdLjBjY3F41CScH3UX+4JDSI9zXeroz7hJ+RteoCaY+GP/LDoM8AO+Pt+DRFw3nXqsjh9Zsts8hnYv8/A==" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha512-M5KW3ztuIICmVIhjSqXe01oV2bpe248gOxqmlcYrEzAvws7Pw3z6BK0iGbrwvdrUQUhi3eXgtxp5I8PDo9YfjQ==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js" integrity="sha512-Mug9KHKmroQFMLm93zGrjhibM2z2Obg9l6qFG2qKjXEXkMp/VDkI4uju9m4QKPjWSwQ6O2qzZEnJDEeCw0Blcw==" crossorigin="anonymous"></script>
+
+  
+<!-- Mansory & imagesLoaded -->
+<script defer src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+<script defer src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+<script defer src="../../assets/js/mansory.js" type="text/javascript"></script>
+
+
+  
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-131556520-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-131556520-1');
+</script>
+
+
+<!-- Load Common JS -->
+<script src="../assets/js/common.js"></script>
+
+<!-- Load DarkMode JS -->
+<script src="../../assets/js/dark_mode.js"></script>
+
+
+</html>
+
