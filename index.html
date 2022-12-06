@@ -12,7 +12,7 @@
   <meta name="description" content="">
 
   <!-- Open Graph -->
-
+  
 
   <!-- Bootstrap & MDB -->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"
@@ -49,6 +49,19 @@
   <script defer type="text/javascript" id="MathJax-script"
     src="https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-mml-chtml.js"></script>
   <script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+  <!-- Link Preview -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+        <!-- MiniPreview stuff here -->
+        <link href="assets/minipreview/jquery.minipreview.css" rel="stylesheet">
+        <script src="assets/minipreview/jquery.minipreview.js"></script>
+        <script>
+            $(function() {
+                $('#intro a').miniPreview({ prefetch: 'pageload' });
+            });
+        </script>
+  
 
 
 </head>
@@ -91,17 +104,6 @@
             </li>
 
             <!-- Other pages -->
-
-
-
-
-
-
-
-
-
-
-
 
 
             <li class="nav-item ">
@@ -206,7 +208,7 @@
         </div>
 
 
-        <div class="clearfix">
+        <div class="clearfix" id="intro">
           <p>Hello! My name is <b>Vinay</b>, and I am currently a graduate student specializing in <b>Medical Imaging
               and
               Informatics</b> at the <a href="http://www.smst.iitkgp.ac.in/" target="_blank">School of Medical Science
@@ -220,7 +222,8 @@
             My research interests include Computer Vision and Deep Learning for Medical Imaging and Ecological
             Conservation.</p>
 
-          <p>You can download my <a href="assets/docs/Vinays_Resume_MedAICV.pdf" target="_blank"><b>CV/Resume</b></a> here.
+          <p>You can download my <a href="assets/docs/Vinays_Resume_MedAICV.pdf" target="_blank"><b>CV/Resume</b></a>
+            here.
           </p>
 
         </div>
@@ -234,11 +237,20 @@
             <div class="container">
 
               <div class="row p-2 d-flex justify-content-between">
+                <div class="col-2">Dec 03, 2022</div>
+                <div class="col-10">
+
+                  Placed as an <b>Advanced Data Scientist</b> at <a>Kotak Mahindra Bank</a>. Will be joining in June 2023 at Mumbai HQ. 
+                </div>
+              </div>
+
+              <div class="row p-2 d-flex justify-content-between">
                 <div class="col-2">Nov 18, 2022</div>
                 <div class="col-10">
 
-                  Awarded <b>Student Travel Grant</b> to attend <a href="https://cods-comad.in/" target="_blank">CODS-COMAD 2023</a> at IIT Bombay.
-              
+                  Awarded <b>Student Travel Grant</b> to attend <a href="https://cods-comad.in/"
+                    target="_blank">CODS-COMAD 2023</a> at IIT Bombay.
+
                 </div>
               </div>
 
@@ -246,13 +258,14 @@
                 <div class="col-2">Nov 11, 2022</div>
                 <div class="col-10">
 
-                  Awarded <b>Student Scholarship</b> to attend <a href="https://www.acml-conf.org/2022/" target="_blank">Asian Conference on Machine Learning (ACML 2022)</a> at ISB Hyderabad.
+                  Awarded <b>Student Scholarship</b> to attend <a href="https://www.acml-conf.org/2022/"
+                    target="_blank">Asian Conference on Machine Learning (ACML 2022)</a> at ISB Hyderabad.
 
                 </div>
               </div>
-              
+
               <div class="row p-2 d-flex justify-content-between">
-                <div class="col-2">Nov 5, 2022</div>
+                <div class="col-2">Nov 05, 2022</div>
                 <div class="col-10">
 
                   Attending <a href="https://mlds.analyticsindiamag.com/" target="_blank">Machine Learning Devlopers
@@ -297,7 +310,8 @@
                 <div class="col-2">Feb 26, 2022</div>
                 <div class="col-10">
 
-                  Recieved B.Tech Degree in Electronics and Communications with Distinction on 5th convocation @ <a href="https://rguktrkv.ac.in/" target="_blank">RGUKT
+                  Recieved B.Tech Degree in Electronics and Communications with Distinction on 5th convocation @ <a
+                    href="https://rguktrkv.ac.in/" target="_blank">RGUKT
                     RK Valley</a>.
 
                 </div>
