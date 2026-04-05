@@ -55,15 +55,17 @@
 
 ## Recent Updates
 
-<!-- Update this section when making changes to track updates -->
+<!-- Edit this section to add updates. Format: Date | Update description -->
+<!-- When ready, prompt to sync these to the website index.html news section -->
 
-### 2026-04-05
-- Fixed merge conflict in index.html
-- Added lazy loading to all images
-- Added width/height attributes to prevent layout shift
-- Added preconnect hints for CDN resources
-- Removed custom domain (CNAME) - using ummadiviany.github.io
-- Fixed image dimensions for project thumbnails
+| Date | Update |
+|------|--------|
+| 2026-04-05 | Fixed merge conflict in index.html |
+| 2026-04-05 | Added lazy loading to all images |
+| 2026-04-05 | Added width/height attributes to prevent layout shift |
+| 2026-04-05 | Added preconnect hints for CDN resources |
+| 2026-04-05 | Removed custom domain - using ummadiviany.github.io |
+| 2026-04-05 | Fixed image dimensions for project thumbnails |
 
 ## Deployment
 
